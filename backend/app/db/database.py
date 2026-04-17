@@ -1,9 +1,14 @@
+import os
+from dotenv import load_dotenv
 from sqlalchemy import create_engine
 from sqlalchemy.orm import sessionmaker
-from app.db.models import Base  # Fixed the broken import path!
+from app.db.models import Base
 
-# UPDATE THIS LINE: Replace YOUR_REAL_PASSWORD with your actual PostgreSQL password
-SQLALCHEMY_DATABASE_URL = "postgresql://postgres:tavjiN-8panjy-huwhon@localhost/studybuddy"
+# load hidden variables from .env
+load_dotenv()
+
+# Grab URL from the environment
+SQLALCHEMY_DATABASE_URL = os.getenv("DATABASE_URL")
 
 engine = create_engine(SQLALCHEMY_DATABASE_URL)
 SessionLocal = sessionmaker(autocommit=False, autoflush=False, bind=engine)

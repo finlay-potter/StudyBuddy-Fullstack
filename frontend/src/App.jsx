@@ -1,14 +1,33 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import { BrowserRouter as Router, Routes, Route, Navigate } from "react-router-dom";
+import Login from "./pages/Login";
+import Register from "./pages/Register";
+import Feed from "./pages/Feed";
+import Matches from "./pages/Matches";
 
 function App() {
   return (
-    <div className="flex items-center justify-center min-h-screen bg-blue-500">
-      <h1 className="text-4xl font-bold text-white">Tailwind v4 is working! 🚀</h1>
-    </div>
-  )
+    <Router>
+      <div className="min-h-screen bg-slate-100 font-sans text-slate-900">
+        <Routes>
+          {/* Default route goes to Login */}
+          <Route path="/" element={<Login />} />
+          
+          {/* Registration route */}
+          <Route path="/register" element={<Register />} />
+          
+          {/* The Discovery Feed */}
+          <Route path="/feed" element={<Feed />} />
+          
+          {/* Catch-all redirects back to login */}
+          <Route path="*" element={<Navigate to="/" />} />
+
+          {/* Matches page */}
+          <Route path="/matches" element={<Matches />} /> 
+          
+        </Routes>
+      </div>
+    </Router>
+  );
 }
 
-export default App
+export default App;

@@ -32,7 +32,7 @@ class User(Base):
     study_style = Column(String(50))
     created_at = Column(DateTime, default=datetime.utcnow)
 
-    # Relationships to access a user's subjects easily in Python
+    # Relationships to access a user's subjects
     strengths = relationship("Subject", secondary=user_strengths, backref="strong_students")
     weaknesses = relationship("Subject", secondary=user_weaknesses, backref="weak_students")
 
