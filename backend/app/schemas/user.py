@@ -11,8 +11,7 @@ class UserCreate(BaseModel):
     major: str
     study_style: str
 
-# 2. This is what the backend will SEND BACK to the frontend
-# (Notice we DO NOT include the password here! Security first.)
+# This is what the backend will send back the frontend
 class UserResponse(BaseModel):
     id: UUID
     username: str
@@ -23,7 +22,11 @@ class UserResponse(BaseModel):
 
     class Config:
         from_attributes = True
-        
+
 class Token(BaseModel):
     access_token: str
     token_type: str
+
+class SwipeCreate(BaseModel):
+    target_id: UUID
+    action: str  # Expected to be "REQUEST" or "SKIP"  
