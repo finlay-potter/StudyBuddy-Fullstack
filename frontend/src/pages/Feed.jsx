@@ -19,7 +19,7 @@ export default function Feed() {
       }
 
       try {
-        const response = await fetch("http://127.0.0.1:8000/discovery/", {
+        const response = await fetch("https://studybuddy-api-t4hg.onrender.com//discovery/", {
           headers: {
             Authorization: `Bearer ${token}`,
           },
@@ -46,7 +46,7 @@ export default function Feed() {
     const token = localStorage.getItem("token");
 
     try {
-      const response = await fetch("http://127.0.0.1:8000/swipe/", {
+      const response = await fetch("https://studybuddy-api-t4hg.onrender.com//swipe/", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
