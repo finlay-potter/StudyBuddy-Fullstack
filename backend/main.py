@@ -25,10 +25,16 @@ ACCESS_TOKEN_EXPIRE_MINUTES = 30
 # Create tables if they don't exist
 models.Base.metadata.create_all(bind=engine)
 
+origins = [
+    "http://localhost:5173",  # React Dev Server
+    "http://127.0.0.1:5173",     # Alternative local IP
+    #"https://vercel_future_url", # Uncomment this and add your Vercel URL when you deploy the frontend
+]
+
 app = FastAPI(title="StudyBuddy API")
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["*"],  # Allow all origins
+    allow_origins=origins,  
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],

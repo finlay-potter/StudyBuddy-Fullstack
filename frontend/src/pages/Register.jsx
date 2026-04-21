@@ -23,7 +23,7 @@ export default function Register() {
     setError("");
 
     try {
-      const response = await fetch("http://127.0.0.1:8000/users/", {
+      const response = await fetch("https://studybuddy-api-t4hg.onrender.com//users/", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -101,7 +101,7 @@ export default function Register() {
         <div className="mt-6 text-center text-sm text-slate-500">
           Already have an account? <Link to="/" className="font-semibold text-blue-600 hover:underline">Log in here</Link>
         </div>
-        
+
       </div>
     </div>
   );
