@@ -16,7 +16,7 @@ export default function Matches() {
       }
 
       try {
-        const response = await fetch("https://studybuddy-api-t4hg.onrender.com//matches/", {
+        const response = await fetch("https://studybuddy-api-t4hg.onrender.com/matches/", {
           headers: {
             Authorization: `Bearer ${token}`,
           },

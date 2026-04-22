@@ -23,7 +23,7 @@ export default function Register() {
     setError("");
 
     try {
-      const response = await fetch("https://studybuddy-api-t4hg.onrender.com//users/", {
+      const response = await fetch("https://studybuddy-api-t4hg.onrender.com/users/", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
