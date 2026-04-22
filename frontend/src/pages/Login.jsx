@@ -19,7 +19,7 @@ export default function Login() {
     formData.append("password", password);
 
     try {
-      const response = await fetch("https://studybuddy-api-t4hg.onrender.com//token", {
+      const response = await fetch("https://studybuddy-api-t4hg.onrender.com/token", {
         method: "POST",
         headers: {
           "Content-Type": "application/x-www-form-urlencoded",
