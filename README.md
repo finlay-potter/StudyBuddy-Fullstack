@@ -1,5 +1,3 @@
-Live Demo: Click Here to view the app.
-
 # StudyBuddy - Full-Stack Matching App
 
 StudyBuddy is a modern, Tinder-style web application designed to connect university students based on their major, study style, and compatibility score. 
