@@ -26,9 +26,10 @@ ACCESS_TOKEN_EXPIRE_MINUTES = 30
 models.Base.metadata.create_all(bind=engine)
 
 origins = [
-    "http://localhost:5173",  # React Dev Server
-    "http://127.0.0.1:5173",     # Alternative local IP
-    "http://study-buddy-fullstack.vercel.app",  # Permanent URL for Vercel Frontend
+    "http://localhost:5173",     
+    "http://127.0.0.1:5173",     
+    "https://study-buddy-fullstack.vercel.app",  # The clean production URL (with https)
+    "https://study-buddy-fullstack-git-master-finlay-potters-projects.vercel.app" # A preview URL
 ]
 app = FastAPI(title="StudyBuddy API")
 app.add_middleware(
