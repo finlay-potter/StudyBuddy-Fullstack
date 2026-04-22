@@ -28,8 +28,8 @@ models.Base.metadata.create_all(bind=engine)
 origins = [
     "http://localhost:5173",  # React Dev Server
     "http://127.0.0.1:5173",     # Alternative local IP
-    #"https://vercel_future_url", # Uncomment this and add your Vercel URL when you deploy the frontend
-]
+   "https://study-buddy-fullstack-5et7on69x-finlay-potters-projects.vercel.app",  # Vercel Frontend
+   ]
 
 app = FastAPI(title="StudyBuddy API")
 app.add_middleware(
